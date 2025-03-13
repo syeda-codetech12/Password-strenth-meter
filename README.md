@@ -22,20 +22,6 @@ The meter evaluates passwords based on the following criteria:
 - No spaces
 - Not a common password
 
-## Installation
-
-1. Clone this repository
-2. Install the required packages:
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-Run the application using:
-```bash
-streamlit run app.py
-```
 
 The application will open in your default web browser. Enter your password in the input field to see:
 - A visual strength indicator
@@ -44,9 +30,6 @@ The application will open in your default web browser. Enter your password in th
 - Specific suggestions for improvement
 - A final verdict on your password's strength
 
-## Security Note
-
-This application runs locally on your machine and does not store or transmit any passwords. All password evaluation is done in real-time on your local device.
 
 ## Made with ❤️
 
