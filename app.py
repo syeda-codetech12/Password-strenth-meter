@@ -105,18 +105,19 @@ def main():
         # Calculate strength
         score, criteria, feedback = check_password_strength(password)
         
-        # Display strength bar
+        # Display strength bar with correct proportion
         st.markdown("### Password Strength")
         strength_bar = st.progress(0)
-        for i in range(score):
-            time.sleep(0.1)
-            strength_bar.progress(i + 1)
+        progress_percentage = score / 12  # Calculate percentage of max score (12)
+        for i in range(int(progress_percentage * 100)):
+            time.sleep(0.01)
+            strength_bar.progress(i / 100)
         
         # Display score and color
         color = get_strength_color(score)
         st.markdown(f"""
             <div style='background-color: {color}; color: white; padding: 10px; border-radius: 5px; text-align: center; margin: 10px 0;'>
-                <h3 style='margin: 0;'>Strength Score: {score}/14</h3>
+                <h3 style='margin: 0;'>Strength Score: {score}/12</h3>
             </div>
         """, unsafe_allow_html=True)
         
